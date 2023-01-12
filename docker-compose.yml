@@ -2,6 +2,8 @@ version: '3.7'
 
 services:
   elasticsearch:
+    networks:
+      - elastic
     container_name: elasticsearch
     image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
     environment:
@@ -23,6 +25,8 @@ services:
       - 9300:9300
 
   logstash:
+    networks:
+      - elastic
     container_name: logstash
     image: logstash:8.6.0
     links:
@@ -34,6 +38,8 @@ services:
       - elasticsearch
 
   kibana:
+    networks:
+      - elastic
     container_name: kibana
     image: docker.elastic.co/kibana/kibana:8.6.0
     environment:
@@ -46,3 +52,6 @@ services:
 volumes:
   elasticsearch-data:
     driver: local
+
+networks:
+  elastic:
