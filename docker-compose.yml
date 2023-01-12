@@ -22,7 +22,7 @@ services:
       - 9300:9300
 
   logstash:
-    image: docker.elastic.co/elasticsearch/logstash:8.6.0
+    image: logstash:8.6.0
     links:
       - elasticsearch
     volumes:
