@@ -1,0 +1,128 @@
+Aug 23 00:46:04 app-3 kernel: [958008.758126] Killed process 3599 (ruby) total-vm:12240780kB, anon-rss:402668kB, file-rss:0kB
+Aug 23 00:46:04 app-3 kernel: [958008.761313] in:imklog invoked oom-killer: gfp_mask=0x201da, order=0, oom_score_adj=0
+Aug 23 00:46:04 app-3 kernel: [958008.761316] in:imklog cpuset=/ mems_allowed=0
+Aug 23 00:46:04 app-3 kernel: [958008.761319] CPU: 0 PID: 418 Comm: in:imklog Tainted: GF            3.13.0-24-generic #46-Ubuntu
+Aug 23 00:46:04 app-3 kernel: [958008.761320] Hardware name: Bochs Bochs, BIOS Bochs 01/01/2011
+Aug 23 00:46:04 app-3 kernel: [958008.761321]  0000000000000000 ffff880079eb9980 ffffffff81715a64 ffff88007f90dfc0
+Aug 23 00:46:04 app-3 kernel: [958008.761325]  ffff880079eb9a08 ffffffff8171039f ffffffff81067876 ffff880079eb99e0
+Aug 23 00:46:04 app-3 kernel: [958008.761327]  ffffffff810c74dc 0000000000000000 ffff88007fffae28 0000000000000000
+Aug 23 00:46:04 app-3 kernel: [958008.761330] Call Trace:
+Aug 23 00:46:04 app-3 kernel: [958008.761334]  [<ffffffff81715a64>] dump_stack+0x45/0x56
+Aug 23 00:46:04 app-3 kernel: [958008.761338]  [<ffffffff8171039f>] dump_header+0x7f/0x1f1
+Aug 23 00:46:04 app-3 kernel: [958008.761341]  [<ffffffff81067876>] ? put_online_cpus+0x56/0x80
+Aug 23 00:46:04 app-3 kernel: [958008.761343]  [<ffffffff810c74dc>] ? rcu_oom_notify+0xcc/0xf0
+Aug 23 00:46:04 app-3 kernel: [958008.761346]  [<ffffffff8115197e>] oom_kill_process+0x1ce/0x330
+Aug 23 00:46:04 app-3 kernel: [958008.761348]  [<ffffffff812d0135>] ? security_capable_noaudit+0x15/0x20
+Aug 23 00:46:04 app-3 kernel: [958008.761351]  [<ffffffff811520b4>] out_of_memory+0x414/0x450
+Aug 23 00:46:04 app-3 kernel: [958008.761354]  [<ffffffff81158223>] __alloc_pages_nodemask+0x983/0xa20
+Aug 23 00:46:04 app-3 kernel: [958008.761357]  [<ffffffff81195413>] alloc_pages_current+0xa3/0x160
+Aug 23 00:46:04 app-3 kernel: [958008.761361]  [<ffffffff8114e577>] __page_cache_alloc+0x97/0xc0
+Aug 23 00:46:04 app-3 kernel: [958008.761364]  [<ffffffff8114ff85>] filemap_fault+0x185/0x410
+Aug 23 00:46:04 app-3 kernel: [958008.761367]  [<ffffffff811744df>] __do_fault+0x6f/0x530
+Aug 23 00:46:04 app-3 kernel: [958008.761369]  [<ffffffff81178682>] handle_mm_fault+0x492/0xf10
+Aug 23 00:46:04 app-3 kernel: [958008.761394]  [<ffffffff810bb75c>] ? print_time.part.8+0x6c/0x90
+Aug 23 00:46:04 app-3 kernel: [958008.761398]  [<ffffffff810bb7ef>] ? print_prefix+0x6f/0xb0
+Aug 23 00:46:04 app-3 kernel: [958008.761400]  [<ffffffff817219a4>] __do_page_fault+0x184/0x560
+Aug 23 00:46:04 app-3 kernel: [958008.761403]  [<ffffffff8101b7d9>] ? sched_clock+0x9/0x10
+Aug 23 00:46:04 app-3 kernel: [958008.761406]  [<ffffffff8109d13d>] ? sched_clock_local+0x1d/0x80
+Aug 23 00:46:04 app-3 kernel: [958008.761409]  [<ffffffff811112fc>] ? acct_account_cputime+0x1c/0x20
+Aug 23 00:46:04 app-3 kernel: [958008.761411]  [<ffffffff8109d76b>] ? account_user_time+0x8b/0xa0
+Aug 23 00:46:04 app-3 kernel: [958008.761413]  [<ffffffff8109dd84>] ? vtime_account_user+0x54/0x60
+Aug 23 00:46:04 app-3 kernel: [958008.761415]  [<ffffffff81721d9a>] do_page_fault+0x1a/0x70
+Aug 23 00:46:04 app-3 kernel: [958008.761418]  [<ffffffff81721419>] do_async_page_fault+0x29/0xe0
+Aug 23 00:46:04 app-3 kernel: [958008.761420]  [<ffffffff8171e238>] async_page_fault+0x28/0x30
+Aug 23 00:46:04 app-3 kernel: [958008.761422] Mem-Info:
+Aug 23 00:46:04 app-3 kernel: [958008.761424] Node 0 DMA per-cpu:
+Aug 23 00:46:04 app-3 kernel: [958008.761426] CPU    0: hi:    0, btch:   1 usd:   0
+Aug 23 00:46:04 app-3 kernel: [958008.761427] CPU    1: hi:    0, btch:   1 usd:   0
+Aug 23 00:46:04 app-3 kernel: [958008.761428] Node 0 DMA32 per-cpu:
+Aug 23 00:46:04 app-3 kernel: [958008.761429] CPU    0: hi:  186, btch:  31 usd:  30
+Aug 23 00:46:04 app-3 kernel: [958008.761431] CPU    1: hi:  186, btch:  31 usd:  59
+Aug 23 00:46:04 app-3 kernel: [958008.761434] active_anon:477575 inactive_anon:1806 isolated_anon:2
+Aug 23 00:46:04 app-3 kernel: [958008.761434]  active_file:0 inactive_file:0 isolated_file:0
+Aug 23 00:46:04 app-3 kernel: [958008.761434]  unevictable:0 dirty:0 writeback:0 unstable:0
+Aug 23 00:46:04 app-3 kernel: [958008.761434]  free:13226 slab_reclaimable:2658 slab_unreclaimable:5962
+Aug 23 00:46:04 app-3 kernel: [958008.761434]  mapped:4629 shmem:5307 pagetables:4910 bounce:0
+Aug 23 00:46:04 app-3 kernel: [958008.761434]  free_cma:0
+Aug 23 00:46:04 app-3 kernel: [958008.761437] Node 0 DMA free:8268kB min:348kB low:432kB high:520kB active_anon:7100kB inactive_anon:84kB active_file:0kB inactive_file:0kB unevictable:0kB isolated(anon):0kB isolated(file):0kB present:15992kB managed:15908kB mlocked:0kB dirty:0kB writeback:0kB mapped:140kB shmem:116kB slab_reclaimable:12kB slab_unreclaimable:144kB kernel_stack:0kB pagetables:60kB unstable:0kB bounce:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:0 all_unreclaimable? yes
+Aug 23 00:46:04 app-3 kernel: [958008.761441] lowmem_reserve[]: 0 1983 1983 1983
+Aug 23 00:46:04 app-3 kernel: [958008.761443] Node 0 DMA32 free:44636kB min:44704kB low:55880kB high:67056kB active_anon:1903200kB inactive_anon:7140kB active_file:0kB inactive_file:0kB unevictable:0kB isolated(anon):8kB isolated(file):0kB present:2080760kB managed:2034124kB mlocked:0kB dirty:0kB writeback:0kB mapped:18376kB shmem:21112kB slab_reclaimable:10620kB slab_unreclaimable:23704kB kernel_stack:4440kB pagetables:19580kB unstable:0kB bounce:0kB free_cma:0kB writeback_tmp:0kB pages_scanned:176 all_unreclaimable? yes
+Aug 23 00:46:04 app-3 kernel: [958008.761458] lowmem_reserve[]: 0 0 0 0
+Aug 23 00:46:04 app-3 kernel: [958008.761461] Node 0 DMA: 13*4kB (UEM) 0*8kB 2*16kB (EM) 7*32kB (UEM) 3*64kB (UEM) 1*128kB (E) 2*256kB (EM) 2*512kB (EM) 2*1024kB (UE) 2*2048kB (ER) 0*4096kB = 8308kB
+Aug 23 00:46:04 app-3 kernel: [958008.761472] Node 0 DMA32: 654*4kB (UEM) 596*8kB (UEM) 389*16kB (UEM) 230*32kB (UE) 99*64kB (UE) 62*128kB (UEM) 21*256kB (UEM) 4*512kB (E) 0*1024kB 1*2048kB (R) 0*4096kB = 44712kB
+Aug 23 00:46:04 app-3 kernel: [958008.761483] Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+Aug 23 00:46:04 app-3 kernel: [958008.761484] 5314 total pagecache pages
+Aug 23 00:46:04 app-3 kernel: [958008.761486] 0 pages in swap cache
+Aug 23 00:46:04 app-3 kernel: [958008.761487] Swap cache stats: add 0, delete 0, find 0/0
+Aug 23 00:46:04 app-3 kernel: [958008.761488] Free swap  = 0kB
+Aug 23 00:46:04 app-3 kernel: [958008.761489] Total swap = 0kB
+Aug 23 00:46:04 app-3 kernel: [958008.761490] 524188 pages RAM
+Aug 23 00:46:04 app-3 kernel: [958008.761491] 0 pages HighMem/MovableOnly
+Aug 23 00:46:04 app-3 kernel: [958008.761492] 11659 pages reserved
+Aug 23 00:46:04 app-3 kernel: [958008.761493] [ pid ]   uid  tgid total_vm      rss nr_ptes swapents oom_score_adj name
+Aug 23 00:46:04 app-3 kernel: [958008.761497] [  285]     0   285     4968      150      13        0             0 upstart-udev-br
+Aug 23 00:46:04 app-3 kernel: [958008.761500] [  291]     0   291    12834      171      27        0         -1000 systemd-udevd
+Aug 23 00:46:04 app-3 kernel: [958008.761501] [  341]   102   341     9810      114      23        0             0 dbus-daemon
+Aug 23 00:46:04 app-3 kernel: [958008.761503] [  369]     0   369    10863       93      27        0             0 systemd-logind
+Aug 23 00:46:04 app-3 kernel: [958008.761505] [  410]   101   410    63961     1373      30        0             0 rsyslogd
+Aug 23 00:46:04 app-3 kernel: [958008.761507] [  699]     0   699     3984      219      12        0             0 upstart-file-br
+Aug 23 00:46:04 app-3 kernel: [958008.761509] [  708]     0   708     3881      118      13        0             0 upstart-socket-
+Aug 23 00:46:04 app-3 kernel: [958008.761510] [  775]     0   775     3955       39      13        0             0 getty
+Aug 23 00:46:04 app-3 kernel: [958008.761512] [  779]     0   779     3955       39      13        0             0 getty
+Aug 23 00:46:04 app-3 kernel: [958008.761514] [  785]     0   785     3955       39      13        0             0 getty
+Aug 23 00:46:04 app-3 kernel: [958008.761515] [  786]     0   786     3955       40      13        0             0 getty
+Aug 23 00:46:04 app-3 kernel: [958008.761517] [  788]     0   788     3955       39      13        0             0 getty
+Aug 23 00:46:04 app-3 kernel: [958008.761519] [  807]     0   807    15341      169      34        0         -1000 sshd
+Aug 23 00:46:04 app-3 kernel: [958008.761520] [  814]     0   814     5914       56      17        0             0 cron
+Aug 23 00:46:04 app-3 kernel: [958008.761522] [  815]     0   815     4785       43      12        0             0 atd
+Aug 23 00:46:04 app-3 kernel: [958008.761524] [  826]     0   826     1092       37       8        0             0 acpid
+Aug 23 00:46:04 app-3 kernel: [958008.761525] [  907]   106   907    61929     2915      60        0          -900 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761527] [  909]   106   909    61965     2479      59        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761529] [  910]   106   910    61929      557      52        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761531] [  911]   106   911    61929      355      51        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761532] [  912]   106   912    62145      535      54        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761534] [  913]   106   913    25881      367      49        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761536] [ 1027]     0  1027     3955       41      12        0             0 getty
+Aug 23 00:46:04 app-3 kernel: [958008.761538] [ 1850]  1000  1850    10530     1813      18        0             0 redis-server
+Aug 23 00:46:04 app-3 kernel: [958008.761539] [ 2839]     0  2839    22227      303      41        0             0 nginx
+Aug 23 00:46:04 app-3 kernel: [958008.761541] [ 2840] 65534  2840    22485      552      41        0             0 nginx
+Aug 23 00:46:04 app-3 kernel: [958008.761543] [ 2841] 65534  2841    22456      489      41        0             0 nginx
+Aug 23 00:46:04 app-3 kernel: [958008.761544] [ 2843] 65534  2843    22482      533      41        0             0 nginx
+Aug 23 00:46:04 app-3 kernel: [958008.761546] [ 2844] 65534  2844    22483      536      41        0             0 nginx
+Aug 23 00:46:04 app-3 kernel: [958008.761548] [19194]  1000 19194    69423    21930     135        0             0 ruby
+Aug 23 00:46:04 app-3 kernel: [958008.761550] [19214]  1000 19214    98772    33499     158        0             0 ruby
+Aug 23 00:46:04 app-3 kernel: [958008.761551] [19217]  1000 19217   104385    39332     168        0             0 ruby
+Aug 23 00:46:04 app-3 kernel: [958008.761562] [19220]  1000 19220   109427    44364     179        0             0 ruby
+Aug 23 00:46:04 app-3 kernel: [958008.761565] [19282]   106 19282    62438     2191      63        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761566] [19283]   106 19283    62421     2215      63        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761568] [19284]   106 19284    62418     2138      63        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761570] [32309]     0 32309    26444      259      55        0             0 sshd
+Aug 23 00:46:04 app-3 kernel: [958008.761572] [32357]     0 32357     5636      495      16        0             0 bash
+Aug 23 00:46:04 app-3 kernel: [958008.761573] [  327]     0   327     1809       23       9        0             0 tail
+Aug 23 00:46:04 app-3 kernel: [958008.761575] [  357]     0   357    26444      274      55        0             0 sshd
+Aug 23 00:46:04 app-3 kernel: [958008.761577] [  416]     0   416     5636      495      16        0             0 bash
+Aug 23 00:46:04 app-3 kernel: [958008.761579] [  955]     0   955    16238      116      36        0             0 sudo
+Aug 23 00:46:04 app-3 kernel: [958008.761580] [  956]     0   956    16133      113      37        0             0 su
+Aug 23 00:46:04 app-3 kernel: [958008.761582] [  957]  1000   957     5662      521      16        0             0 bash
+Aug 23 00:46:04 app-3 kernel: [958008.761584] [ 1113]  1000  1113     1809       28      10        0             0 tail
+Aug 23 00:46:04 app-3 kernel: [958008.761585] [ 1217]     0  1217    26408      249      56        0             0 sshd
+Aug 23 00:46:04 app-3 kernel: [958008.761587] [ 1268]     0  1268     5636      494      17        0             0 bash
+Aug 23 00:46:04 app-3 kernel: [958008.761589] [ 1308]     0  1308    16238      115      35        0             0 sudo
+Aug 23 00:46:04 app-3 kernel: [958008.761590] [ 1309]     0  1309    16133      114      37        0             0 su
+Aug 23 00:46:04 app-3 kernel: [958008.761592] [ 1310]  1000  1310     5660      521      16        0             0 bash
+Aug 23 00:46:04 app-3 kernel: [958008.761594] [ 1467]  1000  1467   444168    49060     457        0             0 ruby
+Aug 23 00:46:04 app-3 kernel: [958008.761596] [ 2219]   106  2219    62418     2171      63        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761597] [ 2232]   106  2232    62399     1095      59        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761599] [ 2236]   106  2236    62400     1106      59        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761601] [ 2240]   106  2240    62409     2143      63        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761602] [ 2244]   106  2244    62395     1066      59        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761604] [ 2247]   106  2247    62395     1052      59        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761606] [ 2252]   106  2252    62395     1066      59        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761607] [ 2257]   106  2257    62395     1066      59        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761609] [ 2259]   106  2259    62395     1065      59        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761611] [ 2263]   106  2263    62409     2145      63        0             0 postgres
+Aug 23 00:46:04 app-3 kernel: [958008.761612] [ 2990]  1000  2990  3052024    71227     404        0             0 ruby
+Aug 23 00:46:04 app-3 kernel: [958008.761614] [ 3028]  1000  3028   375171    31711     347        0             0 ruby
+Aug 23 00:46:04 app-3 kernel: [958008.761616] [ 3344]  1000  3344  3064418    61620     398        0             0 ruby
+Aug 23 00:46:04 app-3 kernel: [958008.761618] [ 3601]  1000  3599  3060195   101301     470        0             0 ruby-timer-thr
+Aug 23 00:46:04 app-3 kernel: [958008.761620] [ 3816]  1000  3816    68705    22084     133        0             0 ruby

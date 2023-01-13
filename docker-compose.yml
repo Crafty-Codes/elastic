@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   elasticsearch:
+    hostname: elasticsearch
     networks:
       - elastic
     container_name: elasticsearch
@@ -23,19 +24,30 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
+    healthcheck:
+      test: curl http://elasticsearch:9200/
+      interval: 20s
+      timeout: 120s
+      start_period: 15s
+      
 
   logstash:
     networks:
       - elastic
     container_name: logstash
     image: logstash:8.6.0
-    links:
-      - elasticsearch
+    ports:
+      - 80:80
     volumes:
       - ./:/config-dir
-    command: logstash -f /config-dir/logstash.conf
+    command: >
+      bash -c '
+      logstash -f /config-dir/logstash.conf
+      '
+
     depends_on:
-      - elasticsearch
+      elasticsearch:
+        condition: service_healthy
 
   kibana:
     networks:
